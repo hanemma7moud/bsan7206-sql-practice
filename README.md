@@ -1,4 +1,6 @@
-# BSAN7206 SQL Question Bank
+# BSAN7206 SQL Practice
+
+Interactive self-paced SQL practice quizzes for BSAN7206 Business Data Management, built with Quarto.
 
 One combined 20-question bank:
 - 10 SQL Part 1 questions
