@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SQL Self-Check – BSAN7206 SQL Self Practice Quiz</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">BSAN7206 SQL Self Practice Quiz</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./sql-quiz.html" aria-current="page"> 
+<span class="menu-text">SQL Self-Check</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SQL Self-Check</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Choose the number of questions you want to practise. Shorter quizzes draw a balanced sample from <strong>SQL Part 1 and SQL Part 2</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This activity is <strong>optional and ungraded</strong>. Feedback appears after every answer.</p>
+</div>
+</div>
+<div class="sql-quiz-bank">
+
+</div>
+<script type="application/json" class="sql-quiz-bank-data">
+{"title": "SQL Self-Check", "questions": [{"topic": "SQL Part 1", "q": "A manager asks: “Show me all our customers.” Which CRUD operation are we using?", "opts": [["Create", "Create adds new data; it does not retrieve existing records."], ["Read", "Read retrieves existing data. SELECT is the main SQL command used for this."], ["Update", "Update changes existing data rather than retrieving it."], ["Delete", "Delete removes data rather than displaying it."]], "a": 1}, {"topic": "SQL Part 1", "q": "What will this query return?", "code": "SELECT Last_Name\nFROM Customers;", "opts": [["All customer information", "Only Last_Name is selected, so the other customer columns are not returned."], ["Customer last names", "SELECT identifies the column to return, so this returns Last_Name values from Customers."], ["Only one customer", "There is no WHERE or LIMIT clause restricting the result to one row."], ["The table structure", "SELECT retrieves data values; it does not display the table definition."]], "a": 1}, {"topic": "SQL Part 1", "q": "What does * mean in this query?", "code": "SELECT *\nFROM Customers;", "opts": [["Multiply values", "In this SELECT context, * is a wildcard rather than multiplication."], ["Return all columns", "The wildcard * tells SELECT to return all columns from Customers."], ["Return all databases", "The wildcard applies to columns in the selected table, not databases."], ["Return only numeric columns", "The wildcard does not restrict columns by data type."]], "a": 1}, {"topic": "SQL Part 1", "q": "The manager wants only customers whose last name is Smith. Which clause is missing?", "code": "SELECT Last_Name\nFROM Customers\n_____ Last_Name = 'Smith';", "opts": [["ORDER BY", "ORDER BY sorts rows; it does not filter to Smith."], ["WHERE", "WHERE filters rows according to a condition."], ["GROUP BY", "GROUP BY creates groups, usually for aggregation."], ["LIMIT", "LIMIT controls how many rows are returned, not which last name they contain."]], "a": 1}, {"topic": "SQL Part 1", "q": "Which query returns the five sales orders with the highest Freight values?", "opts": [["SELECT * FROM Sales_Orders ORDER BY Freight ASC LIMIT 5;", "ASC sorts from lowest to highest, so this returns the five lowest Freight values."], ["SELECT * FROM Sales_Orders ORDER BY Freight DESC LIMIT 5;", "DESC sorts Freight from highest to lowest and LIMIT 5 keeps the first five rows."], ["SELECT * FROM Sales_Orders WHERE Freight DESC LIMIT 5;", "WHERE needs a condition; DESC belongs with ORDER BY."], ["SELECT * FROM Sales_Orders GROUP BY Freight LIMIT 5;", "GROUP BY does not provide the required highest-to-lowest order."]], "a": 1}, {"topic": "SQL Part 1", "q": "What is the purpose of GROUP BY in this query?", "code": "SELECT Person_Type_Description, COUNT(Customer_ID)\nFROM Customers\nGROUP BY Person_Type_Description;", "opts": [["Sort customer types alphabetically", "Sorting is controlled by ORDER BY."], ["Create one group for each person type so customers can be counted per type", "GROUP BY collects rows sharing the same grouping value so COUNT can be calculated for each group."], ["Delete duplicate customer types from the database", "GROUP BY does not delete stored data."], ["Return only the first customer type", "GROUP BY does not limit the result to the first group."]], "a": 1}, {"topic": "SQL Part 1", "q": "What does AS Customer_Name do here?", "code": "SELECT CONCAT(First_Name, ' ', Last_Name) AS Customer_Name\nFROM Customers;", "opts": [["Renames the stored Customers table", "The alias applies to the output expression, not to the table."], ["Gives the combined output column a readable alias", "AS assigns a temporary name to the result produced by CONCAT."], ["Changes every customer's stored name", "SELECT does not update stored data."], ["Creates a permanent Customer_Name column", "An alias names the query result only; it does not add a permanent column."]], "a": 1}, {"topic": "SQL Part 1", "q": "Why is Customer_ID used in this JOIN?", "code": "FROM Customers C\nJOIN Sales_Orders SO\n  ON C.Customer_ID = SO.Customer_ID", "opts": [["Because every column in both tables must have the same name", "Only the relationship key is being matched here."], ["Because it matches each order to the customer identified by the same Customer_ID", "The join condition uses the related key values to combine the correct rows."], ["Because JOIN automatically chooses Customer_ID", "The ON clause explicitly tells SQL what to match."], ["Because Customer_ID sorts the joined result", "The ON clause matches rows; sorting requires ORDER BY."]], "a": 1}, {"topic": "SQL Part 1", "q": "What does DISTINCT do in this query?", "code": "SELECT DISTINCT Customer_ID\nFROM Sales_Orders;", "opts": [["Returns each Customer_ID only once in the result", "DISTINCT removes duplicate result rows, so repeated Customer_ID values appear once."], ["Counts Customer_ID values", "COUNT is required to count values."], ["Sorts Customer_ID from low to high", "Sorting requires ORDER BY."], ["Deletes duplicated IDs from the database", "DISTINCT only affects the query result; it does not delete stored data."]], "a": 0}, {"topic": "SQL Part 1", "q": "Why might you run USE handlebarhaven; before a query?", "opts": [["To select the default schema/database for following table references", "USE selects the current schema so later queries can refer directly to its tables."], ["To create the Customers table", "USE selects a schema; it does not create tables."], ["To delete other schemas", "USE does not remove schemas."], ["To convert SQL into Excel formulas", "USE only selects the current database/schema."]], "a": 0}, {"topic": "SQL Part 2", "q": "A manager wants the average value of all sales orders. Which expression should be used?", "opts": [["SUM(Total_Due)", "SUM produces a total rather than an average."], ["AVG(Total_Due)", "AVG calculates the mean of the Total_Due values."], ["MAX(Total_Due)", "MAX returns the largest individual value."], ["COUNT(Total_Due)", "COUNT returns the number of non-NULL values."]], "a": 1}, {"topic": "SQL Part 2", "q": "Which condition returns customers whose Last_Name begins with Ada?", "opts": [["WHERE Last_Name = 'Ada%'", "= checks an exact value rather than a wildcard pattern."], ["WHERE Last_Name LIKE 'Ada%'", "LIKE performs pattern matching and % allows any characters after Ada."], ["WHERE Last_Name IN ('Ada%')", "IN checks listed values; it does not perform wildcard matching."], ["WHERE Last_Name BETWEEN 'Ada' AND '%'", "BETWEEN checks a range rather than a text pattern."]], "a": 1}, {"topic": "SQL Part 2", "q": "Which condition selects Due_Date values during January 2023?", "opts": [["WHERE Due_Date BETWEEN '2023-01-01' AND '2023-01-31'", "BETWEEN selects values within the stated date boundaries."], ["WHERE Due_Date = '2023-01'", "This does not represent every date in January."], ["WHERE Due_Date IN ('2023-01-01','2023-01-31')", "This would match only the two listed dates."], ["WHERE Due_Date > '2023-01-31'", "This selects dates after January."]], "a": 0}, {"topic": "SQL Part 2", "q": "Which condition correctly checks whether Name_Style has no value?", "opts": [["WHERE Name_Style = NULL", "A database NULL is not tested using ordinary equality."], ["WHERE Name_Style IS NULL", "IS NULL explicitly tests whether the column has no value."], ["WHERE Name_Style = 'NULL'", "This checks for the literal text NULL, which is different from a database NULL."], ["WHERE Name_Style IN (NULL)", "IN is not the appropriate NULL test."]], "a": 1}, {"topic": "SQL Part 2", "q": "After grouping Sales_Orders by Customer_ID, which clause keeps only customers with more than 20 orders?", "opts": [["WHERE COUNT(*) > 20", "WHERE filters source rows before grouping."], ["HAVING COUNT(*) > 20", "HAVING filters aggregated groups after GROUP BY."], ["ORDER BY COUNT(*) > 20", "ORDER BY sorts results; it does not filter groups."], ["GROUP BY COUNT(*) > 20", "GROUP BY defines groups; it does not filter the completed groups."]], "a": 1}, {"topic": "SQL Part 2", "q": "Which expression shows Name_Style when present, but 'Unspecified' when it is NULL?", "opts": [["IFNULL(Name_Style, 'Unspecified')", "IFNULL returns the original value when present and the alternative when it is NULL."], ["ISNULL(Name_Style, 'Unspecified')", "ISNULL is used to test NULL rather than substitute an alternative value here."], ["NULL(Name_Style, 'Unspecified')", "NULL is not a substitution function."], ["IN(Name_Style, 'Unspecified')", "IN checks membership in a list; it does not replace missing values."]], "a": 0}, {"topic": "SQL Part 2", "q": "What is this CASE expression doing?", "code": "CASE Person_Type\n WHEN 'I' THEN 'Individual'\n WHEN 'SC' THEN 'Store Clerk'\n ELSE 'Unknown'\nEND", "opts": [["Sorting Person_Type values", "Sorting is done with ORDER BY."], ["Returning a different label depending on Person_Type", "CASE evaluates the value and returns the corresponding output label."], ["Removing unknown Person_Type rows", "CASE returns a value; it does not automatically filter rows."], ["Grouping customers by Person_Type", "Grouping is done with GROUP BY."]], "a": 1}, {"topic": "SQL Part 2", "q": "What business question does this query answer?", "code": "SELECT Customer_ID\nFROM Customers\nWHERE Customer_ID NOT IN\n (SELECT Customer_ID FROM Sales_Orders);", "opts": [["Which customers have no Sales Orders?", "The inner query finds customer IDs with orders; NOT IN keeps customers absent from that list."], ["Which customers have the highest-value orders?", "No sales value, sorting or ranking appears in the query."], ["How many orders does each customer have?", "There is no COUNT or GROUP BY."], ["Which Sales Orders have no Customer_ID?", "The outer query reads from Customers, not Sales_Orders."]], "a": 0}, {"topic": "SQL Part 2", "q": "What is a main benefit of a Common Table Expression (CTE)?", "opts": [["It can create a named intermediate result that simplifies a complex query", "A CTE captures a query result so it can be referenced later in the statement."], ["It permanently creates a physical table", "A CTE is not a permanent database table."], ["It automatically removes NULL values", "NULL handling requires explicit logic."], ["It automatically ranks rows", "Ranking requires a function such as RANK()."]], "a": 0}, {"topic": "SQL Part 2", "q": "Which expression ranks customers by Total_Due separately for each Sales_Person_ID?", "opts": [["RANK() OVER (ORDER BY Total_Due DESC)", "This creates one overall ranking and does not restart for each salesperson."], ["RANK() OVER (PARTITION BY Sales_Person_ID ORDER BY Total_Due DESC)", "PARTITION BY creates salesperson-specific groups and RANK restarts within each group."], ["GROUP BY Sales_Person_ID ORDER BY Total_Due DESC", "GROUP BY does not assign a ranking number to rows."], ["ORDER BY Sales_Person_ID, Total_Due DESC", "This sorts the rows but does not calculate a rank."]], "a": 1}]}
+</script>
+
+
+
+</main> <!-- /main -->
+<script src="quiz-bank.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hanemma7moud\.github\.io\/bsan7206-sql-practice\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
