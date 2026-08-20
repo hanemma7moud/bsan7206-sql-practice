@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "sql-quiz.html",
+    "href": "sql-quiz.html",
+    "title": "SQL Self-Check",
+    "section": "",
+    "text": "Choose the number of questions you want to practise. Shorter quizzes draw a balanced sample from SQL Part 1 and SQL Part 2.\n\n\n\n\n\n\nNote\n\n\n\nThis activity is optional and ungraded. Feedback appears after every answer."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SQL Practice Hub",
+    "section": "",
+    "text": "This is an optional and ungraded SQL self-check.\nThe quiz draws from a 20-question bank covering SQL Parts 1 and 2. Choose the amount of practice that suits you:\n\n5 questions — quick check\n10 questions — standard practice\n20 questions — full review\n\nStart the SQL Self-Check\n\n\n\n\n\n\nTip\n\n\n\nDo not only ask, “Does the SQL run?” Also ask, “Does it answer the business question?”"
+  }
+]

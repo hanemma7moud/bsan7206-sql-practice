@@ -1,0 +1,18 @@
+---
+title: "SQL Practice Hub"
+subtitle: "BSAN7206 Business Data Management"
+---
+
+This is an **optional and ungraded** SQL self-check.
+
+The quiz draws from a **20-question bank** covering SQL Parts 1 and 2. Choose the amount of practice that suits you:
+
+- **5 questions** — quick check
+- **10 questions** — standard practice
+- **20 questions** — full review
+
+[Start the SQL Self-Check](sql-quiz.qmd){.btn .btn-primary .btn-lg}
+
+::: {.callout-tip}
+Do not only ask, **“Does the SQL run?”** Also ask, **“Does it answer the business question?”**
+:::
