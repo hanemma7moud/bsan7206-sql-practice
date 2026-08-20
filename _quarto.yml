@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "BSAN7206 SQL Practice"
+  title: "BSAN7206 SQL Self Practice Quiz"
   navbar:
     left:
       - href: index.qmd
